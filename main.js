@@ -1,9 +1,5 @@
-var app = require('app');
-var ipc = require('ipc');
-var dialog = require('dialog');
-var BrowserWindow = require('browser-window');
-var globalShortcut = require('global-shortcut');
-var fileSizeTree = require('file-size-tree-js');
+
+const { app,BrowserWindow,ipcMain,dialog,globalShortcut,fileSizeTree } = require('electron')
 var mainWindow = null;
 
 app.on('ready', function() {
@@ -22,7 +18,7 @@ function createAppWindow() {
      // package.json.)
     icon: 'app/icons/Icon.png'
   });
-  mainWindow.loadUrl('file://' + __dirname + '/app/index.html');
+  mainWindow.loadURL('file://' + __dirname + '/app/index.html');
 }
 
 function addAppEventListeners() {
@@ -30,7 +26,7 @@ function addAppEventListeners() {
     quit();
   });
 
-  ipc.on('select-directory', function(event, path) {
+  ipcMain.on('select-directory', function(event, path) {
     if (path) {
       mapDirectory(path);
     } else {
@@ -38,15 +34,15 @@ function addAppEventListeners() {
     }
   });
 
-  ipc.on('toggle-sidebar', function() {
+  ipcMain.on('toggle-sidebar', function() {
     toggleSidebar();
   });
 
-  ipc.on('toggle-tooltip', function(event, tooltipToggledWithCheckbox) {
+  ipcMain.on('toggle-tooltip', function(event, tooltipToggledWithCheckbox) {
     toggleTooltip(tooltipToggledWithCheckbox);
   });
 
-  ipc.on('quit', function() {
+  ipcMain.on('quit', function() {
     quit();
   });
 }
