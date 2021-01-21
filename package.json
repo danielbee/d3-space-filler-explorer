@@ -5,13 +5,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/UsabilityEtc/d3-space-filler-explorer.git"
+    "url": "git+https://github.com/UsabilityEtc/d3-space-filler-explorer.git"
   },
-  "author": {
-    "name": "Jeffrey Morgan",
-    "email": "usabilityetc@gmail.com",
-    "url": "http://usabilityetc.com"
-  },
+  "author": "Jeffrey Morgan <usabilityetc@gmail.com> (http://usabilityetc.com)",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -28,6 +24,7 @@
     "D3"
   ],
   "devDependencies": {
+    "electron": "^11.2.0",
     "electron-packager": "^7.0.0",
     "electron-prebuilt": "^0.30.4",
     "numeral": "^1.5.3"
@@ -39,5 +36,12 @@
     "jquery": "^3.0.0",
     "nodejs-disks": "^0.2.1",
     "underscore": "^1.8.3"
+  },
+  "bugs": {
+    "url": "https://github.com/UsabilityEtc/d3-space-filler-explorer/issues"
+  },
+  "homepage": "https://github.com/UsabilityEtc/d3-space-filler-explorer#readme",
+  "directories": {
+    "doc": "docs"
   }
 }
